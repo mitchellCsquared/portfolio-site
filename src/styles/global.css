@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+/* Custom theme for Mitchell's site */
+@theme {
+  /* Neutral foundation (paper + ink) */
+  --color-bone: #E9E5DA;        /* Old Ivory - main text on dark */
+  --color-paper: #C8C2B3;       /* Dusty Linen - light background */
+  --color-mushroom: #B3AC9C;    /* Soft mid neutral */
+  --color-pewter: #5C5952;      /* Slate Ink - mid dark */
+  --color-charcoal: #3F3C37;    /* Bronzed Coal - main page bg */
+
+  /* Muted accents (desaturated, retro) */
+  --color-sage: #7B897C;        /* Dustgreen */
+  --color-avocado: #7F7B63;     /* Muted olive */
+  --color-tealwash: #6F8585;    /* Desaturated teal */
+  --color-powderblue: #8899A8;  /* Washed Blue */
+  --color-marine: #53636F;      /* Faded deep blue */
+
+  /* Warm muted complements */
+  --color-rusted: #8E5B53;      /* Faded Brick */
+  --color-plum: #7A5966;        /* Muted plum */
+  --color-ochre: #A38456;       /* Antique Gold */
+  --color-tobacco: #9A7A58;     /* Warm brown */
+
+  /* Pastel highlights (soft tints) */
+  --color-buttercream: #D4C19A; /* Cream Tobacco */
+  --color-coral: #D8A79B;       /* Soft Coral */
+  --color-peach: #DFC0A5;       /* Faded Peach */
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+/* Global defaults */
+body {
+  background-color: var(--color-charcoal);
+  color: var(--color-bone);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+/* Remove the default triangle marker on <summary> */
+details > summary {
+  list-style: none;
+}
+
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Base button */
+.btn {
+  @apply rounded-full border px-4 py-2 text-sm font-semibold
+         transition-all duration-200 ease-out
+         active:scale-95;
+}
+
+/* Primary = subtle ink button */
+.btn-primary {
+  @apply border-rusted bg-pewter text-paper
+         hover:bg-rusted hover:text-sage hover:border-rusted
+         hover:scale-[1.03] hover:-translate-y-[1px];
+}
+
+/* Secondary = soft sage / blue */
+.btn-secondary {
+  @apply border-charcoal bg-sage text-bone
+         hover:bg-powderblue hover:text-bone hover:border-powderblue
+         hover:scale-[1.03] hover:-translate-y-[1px];
+}
+
+@layer components {
+  /* .card {
+    @apply rounded-2xl border border-rusted bg-mushroom p-5 hover:bg-rusted hover:scale-[1.03] hover:-translate-y-[1px];
+  } */
+
+  .card {
+    @apply rounded-2xl border border-charcoal bg-pewter p-5 hover:bg-ochre hover:scale-[1.03] hover:-translate-y-[1px];
+  }
+
+  /* .card-title {
+    @apply mb-2 text-sm font-semibold text-rusted hover:text-bone;
+  } */
+
+  .card-title {
+    @apply mb-2 text-sm font-bold text-buttercream hover:text-bone
+           transition-all duration-600;
+  }
+  
+  .card-list {
+    @apply list-disc pl-6 text-bone marker:text-mushroom space-y-1;
+   }
+
+  .card-text {
+    @apply text-sm text-bone;
+  }
+
+  .text-highlight {
+    @apply font-medium text-ochre transition-colors duration-200 transition-all hover:font-bold hover:text-buttercream;
+  }
+
+  /* Highlight with hover effect (optional variant) */
+  .text-link {
+    @apply font-medium text-ochre hover:text-buttercream transition-colors duration-200;
+  }
+
+  .typewriter-heading {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid var(--color-buttercream); /* cursor */
+
+    /* tweak duration/steps to taste */
+    animation:
+      typing 3s steps(60, end) 0.3s forwards,      /* type once */
+      caret 0.8s step-end infinite 3.3s;           /* blink after typing */
+  }
+}
+
+/* keyframes can live outside the @layer block */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 50%;
+  }
+}
+
+@keyframes caret {
+  from,
+  to {
+    border-right-color: transparent;
+  }
+  50% {
+    border-right-color: var(--color-buttercream);
+  }
+}
+
+

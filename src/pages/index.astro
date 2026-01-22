@@ -1,16 +1,229 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SkillCard from "../components/SkillCard.astro";
 
+const skills = [
+  {
+    title: "JavaScript / TypeScript",
+    bullets: [
+      "Modern UI development with TypeScript",
+      "Modern UI development with ReactJS and Astro",
+      "Created UIs used by Fortune 500 companies",
+    ],
+  },
+  {
+    title: "Java",
+    bullets: [
+      "Backend work with .NET APIs",
+      "Internal services and systems integrations",
+      "RESTful endpoints and data modeling",
+    ],
+  },
+  {
+    title: "SQL & Databases",
+    bullets: [
+      "Schema design & optimization",
+      "Debugging and performance tuning",
+      "Complex stored procedures & queries",
+    ],
+  },
+  {
+    title: "DevOps / Cloud / Automation",
+    bullets: [
+      "AWS deployment & infrastructure work",
+      "CI/CD pipelines & build automation",
+      "Automated unit testing & user acceptance testing",
+      "Monitoring, logging, and remote debugging",
+    ],
+  },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Mitchell Cornwell | Software Engineer">
+  <section class="mb-12">
+    <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-paper">
+      Mitchell Cornwell | Software Engineer
+    </p>
+    <h1
+      class="mb-4 text-4xl font-extrabold tracking-tight text-bone sm:text-5xl"
+    >
+      <span class="typewriter-heading">
+        Hi, I'm Mitchell.
+      </span>
+    </h1>
+
+    <!--Maybe extract the below to an About Me section? -->
+    <p class="max-w-2xl text-bone">
+      I have been working professionally as a software engineer since 2017. I
+      mostly do backend web development but I have experience doing frontend UIs
+      for Fortune 500 companies as well.
+      <br /><br />
+       I enjoy a lot of different hobbies including
+      <span class="text-highlight">game design</span> & {" "}
+      <span class="text-highlight">game development</span>,{" "}
+      <span class="text-highlight">electronics</span>,{" "}
+      <span class="text-highlight">freestyle FPV</span>,{" "}
+      <span class="text-highlight">music</span> & {" "}
+      <span class="text-highlight">music production</span>,{" "}
+      <span class="text-highlight">digital art</span>,{" "}
+      <span class="text-highlight">animation</span>,{" "}
+      <span class="text-highlight">video production</span>,{" "}
+      <span class="text-highlight">3D Printing</span>, and {" "}
+      <span class="text-highlight">playing video games</span>.{" "}
+    </p>
+
+    <div class="mt-6 flex flex-wrap gap-3">
+      <a
+        href="/projects"
+        transition:name="projects-cta"
+        class="rounded-full border border-ochre bg-ochre/20 px-4 py-2 text-sm font-semibold text-buttercream hover:bg-ochre/30"
+      >
+        View projects
+      </a>
+
+      <a
+        href="/games"
+        class="rounded-full border border-pewter px-4 py-2 text-sm font-semibold text-bone hover:border-sage hover:text-sage"
+      >
+        Play games in the browser
+      </a>
+    </div>
+  </section>
+
+  <section class="mt-16">
+    <h2 class="mb-6 text-2xl font-bold tracking-tight text-paper">
+      Career Highlights - Under Construction
+    </h2>
+
+    <p class="max-w-2xl mb-10 text-sm text-bone">
+      I've worked on a range of projects professionally — from internal tooling,
+      to customer-facing web apps, to backend automation. Here's a quick
+      overview of the technologies I’ve used in real-world applications:
+    </p>
+
+    <div class="grid gap-8 md:grid-cols-2">
+      {
+        skills.map((skill) => (
+          <SkillCard title={skill.title} bullets={skill.bullets} />
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- <section class="mt-16">
+    <h2 class="mb-6 text-2xl font-bold tracking-tight text-paper">
+      Career Highlights - Under Construction
+    </h2>
+
+    <p class="max-w-2xl mb-10 text-sm text-bone">
+      I've worked on a range of projects professionally — from internal tooling,
+      to customer-facing web apps, to backend automation. Here's a quick
+      overview of the technologies I’ve used in real-world applications:
+    </p>
+
+    <div class="grid gap-8 md:grid-cols-2">
+      <label class="relative block cursor-pointer">
+        <input type="checkbox" class="peer sr-only" />
+
+        <div
+          class="card transition-all duration-200 peer-hover:scale-[1.03] peer-hover:-translate-y-[1px]"
+        >
+          <h3 class="card-title">JavaScript / TypeScript</h3>
+          <ul class="card-list">
+            <li>Modern UI development with TypeScript</li>
+            <li>Modern UI development with ReactJS and Astro</li>
+            <li>Created UIs used by Fortune 500 companies</li>
+          </ul>
+        </div>
+
+        <div
+          class="fixed inset-0 z-40 hidden items-center justify-center bg-black/60 backdrop-blur-sm
+           peer-checked:flex"
+        >
+          <div
+            class="card max-w-xl w-[90%] scale-110 border-ochre bg-pewter/90 shadow-2xl"
+          >
+            <h3 class="card-title text-xl mb-4">JavaScript / TypeScript</h3>
+            <ul class="card-list space-y-2">
+              <li>Modern UI development with TypeScript</li>
+              <li>Modern UI development with ReactJS and Astro</li>
+              <li>Created UIs used by Fortune 500 companies</li>
+            </ul>
+
+            <p class="mt-4 text-xs text-paper/80">
+              Click anywhere outside this box (or again on the card) to close.
+            </p>
+          </div>
+        </div>
+      </label>
+      <label class="relative cursor-pointer">
+        <input type="radio" name="card-select" class="peer sr-only" />
+
+        <div
+          class="card transition-all duration-300 peer-checked:scale-[1.05] peer-checked:-translate-y-1 peer-checked:bg-buttercream/15"
+        >
+          <h3 class="card-title peer-checked:text-buttercream">Java</h3>
+          <ul class="card-list">
+            <li>Backend work with .NET APIs</li>
+            <li>Internal services and systems integrations</li>
+            <li>RESTful endpoints and data modeling</li>
+          </ul>
+        </div>
+      </label>
+
+      <label class="relative cursor-pointer">
+        <input type="radio" name="card-select" class="peer sr-only" />
+        <div
+          class="card transition-all duration-300 peer-checked:scale-[1.05] peer-checked:-translate-y-1 peer-checked:bg-buttercream/15"
+        >
+          <h3 class="card-title peer-checked:text-buttercream">
+            SQL & Databases
+          </h3>
+          <ul class="card-list">
+            <li>Schema design & optimization</li>
+            <li>Debugging and performance tuning</li>
+            <li>Complex stored procedures & queries</li>
+          </ul>
+        </div>
+      </label>
+      <label class="relative cursor-pointer">
+        <input type="radio" name="card-select" class="peer sr-only" />
+        <div
+          class="card transition-all duration-300 peer-checked:scale-[1.05] peer-checked:-translate-y-1 peer-checked:bg-buttercream/15"
+        >
+          <h3 class="card-title peer-checked:text-buttercream">
+            DevOps / Cloud / Automation
+          </h3>
+          <ul class="card-list">
+            <li>AWS deployment & infrastructure work</li>
+            <li>CI/CD pipelines & build automation</li>
+            <li>Automated unit testing & user acceptance testing</li>
+            <li>Monitoring, logging, and remote debugging</li>
+          </ul>
+        </div>
+      </label>
+    </div>
+  </section>
+	 -->
+  <br />
+
+  <div class="card group">
+    <h3 class="card-title group-hover:text-bone">Game development</h3>
+    <p class="card-text">
+      <ul>
+        2D game development experience in:
+        <li>Godot</li>
+        <li>Unity</li>
+      </ul>
+    </p>
+  </div>
+  <br />
+
+  <div class="card group">
+    <h3 class="card-title group-hover:text-bone">Freestyle FPV</h3>
+    <p class="card-text">
+      I fly freestyle FPV. <br />
+       I love tiny whoops <br />
+    </p>
+  </div>
+</BaseLayout>

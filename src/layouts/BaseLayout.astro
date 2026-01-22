@@ -1,0 +1,79 @@
+<!-- ---
+import "../styles/global.css";
+
+const { title = "Mitchell Cornwell | Software Engineer" } = Astro.props;
+---
+
+<html lang="en" class="h-full">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body class="min-h-full bg-charcoal text-bone">
+    <div class="mx-auto max-w-5xl px-4 py-8">
+      <header class="mb-10">
+        <nav class="flex gap-6 text-sm font-medium text-mushroom">
+          <a href="/" class="hover:text-sage">Home</a>
+          <span class="text-pewter">|</span>
+          <a href="/projects" class="hover:text-sage">Projects</a>
+          <span class="text-pewter">|</span>
+          <a href="/games" class="hover:text-sage">Games</a>
+        </nav>
+      </header>
+
+      <main>
+        <slot />
+      </main>
+
+      <footer
+        class="mt-16 border-t border-slate-800 pt-6 text-xs text-slate-500"
+      >
+        <p>
+          © {new Date().getFullYear()} Mitchell. Built with Astro, TypeScript &
+          Tailwind.
+        </p>
+      </footer>
+    </div>
+  </body>
+</html> -->
+
+---
+import "../styles/global.css";
+import { ViewTransitions } from "astro:transitions";
+
+const { title = "Mitchell Cornwell | Software Engineer" } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+
+    {/* Enable view transitions site-wide */}
+    <ViewTransitions />
+  </head>
+
+  <body class="min-h-full bg-charcoal text-bone">
+    <div class="mx-auto max-w-5xl px-4 py-8">
+      <header class="mb-10">
+        <nav class="flex gap-6 text-sm font-medium text-mushroom">
+          <a href="/" class="hover:text-sage">Home</a>
+          <span class="text-pewter">|</span>
+          <a href="/projects" class="hover:text-sage">Projects</a>
+          <span class="text-pewter">|</span>
+          <a href="/games" class="hover:text-sage">Games</a>
+        </nav>
+      </header>
+
+      <main>
+        <slot />
+      </main>
+
+      <footer class="mt-16 border-t border-pewter pt-6 text-xs text-mushroom">
+        <p>© {new Date().getFullYear()} Mitchell Cornwell. Built with Astro, TypeScript & Tailwind.</p>
+      </footer>
+    </div>
+  </body>
+</html>

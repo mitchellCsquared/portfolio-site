@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+// When you have a real Godot export, you'll change `src` to:
+//   /games/placeholder/index.html
+// and put the exported files in `public/games/placeholder/`
+const gameIframeSrc = "/games/placeholder/index.html";
+---
+
+<BaseLayout title="Robot Builder (Placeholder) | Games">
+  <section class="mb-6">
+    <a href="/games" class="mb-2 inline-block text-xs font-semibold text-slate-400 hover:text-sky-300">
+      ← Back to games
+    </a>
+    <h1 class="mb-2 text-3xl font-bold tracking-tight text-slate-50">
+      Robot Builder (Placeholder)
+    </h1>
+    <p class="max-w-2xl text-sm text-slate-300">
+      This is a stub page wired up for a Godot HTML5/WebAssembly export. Once
+      you have a build from Godot, drop it into <code class="rounded bg-slate-800 px-1 py-0.5 text-xs">public/games/placeholder/</code> and the iframe below will load it.
+    </p>
+  </section>
+
+  <section class="space-y-4">
+    <div class="aspect-video overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
+      <iframe
+        src={gameIframeSrc}
+        title="Robot Builder (Placeholder)"
+        class="h-full w-full"
+        loading="lazy"
+      />
+    </div>
+
+    <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-xs text-slate-300">
+      <h2 class="mb-1 text-sm font-semibold text-sky-300">
+        How to hook in your Godot build
+      </h2>
+      <ol class="list-decimal space-y-1 pl-5">
+        <li>Export your game from Godot using the <span class="font-mono">HTML5</span> preset.</li>
+        <li>Copy the exported files into <span class="font-mono">public/games/placeholder/</span> in this project.</li>
+        <li>Make sure the main HTML file is named <span class="font-mono">index.html</span>.</li>
+        <li>Build and deploy your Astro site — the iframe above will now load the Godot game.</li>
+      </ol>
+    </div>
+  </section>
+</BaseLayout>

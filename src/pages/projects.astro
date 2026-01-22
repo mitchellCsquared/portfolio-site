@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const projects = [
+  {
+    title: "Interactive Portfolio",
+    href: "/",
+    tech: ["Astro", "TypeScript", "Tailwind"],
+    description:
+      "This site. A fast, content-driven portfolio with islands of interactivity.",
+  },
+  // ...
+];
+---
+
+<BaseLayout title="Projects | Mitchell Cornwell">
+  {/* This block is what the button will grow into */}
+  <!-- <section
+  transition:name="projects-cta"
+  class="mb-8 rounded-full border border-ochre bg-ochre/20 px-6 py-5 md:px-8 md:py-6"
+> -->
+<section
+  transition:name="projects-cta"
+  class="mb-8 border border-ochre bg-ochre/20 px-6 py-5 md:px-8 md:py-6"
+  >
+  <div class="flex items-center justify-between">
+    <h1 class="text-3xl font-bold tracking-tight text-buttercream">
+      Projects
+    </h1>
+
+    <a
+      href="/"
+      class="text-sm px-3 py-1 rounded-full border border-ochre bg-charcoal/60 text-buttercream hover:bg-ochre hover:text-bone transition-all"
+    >
+      ← Back
+    </a>
+  </div>
+
+  <p class="max-w-2xl mt-3 text-sm text-paper">
+    A curated list of things I’ve built or am actively hacking on. I’ll keep
+    this updated as I add more web apps, games, and FPV tools.
+  </p>
+</section>
+
+
+  {/* Existing projects list */}
+  <section class="space-y-4">
+    {projects.map((project) => (
+    //   <article class="rounded-3xl border border-charcoal bg-charcoal/80 p-6">
+        <article class="border border-pewter bg-pewter/80 p-6">
+        <div class="flex items-center justify-between gap-4">
+          <h2 class="text-lg font-semibold text-bone">
+            {project.href === "#" ? (
+              project.title
+            ) : (
+              <a href={project.href} class="hover:text-buttercream">
+                {project.title}
+              </a>
+            )}
+          </h2>
+          <div class="flex flex-wrap gap-2 text-[11px] uppercase tracking-wide text-buttercream">
+            {project.tech.map((t) => (
+              <span class="rounded-full border border-ochre bg-ochre/30 px-2 py-1">
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+        <p class="mt-2 text-sm text-paper">{project.description}</p>
+      </article>
+    ))}
+  </section>
+</BaseLayout>

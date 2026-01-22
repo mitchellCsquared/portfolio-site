@@ -1,0 +1,46 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const games = [
+  {
+    slug: "placeholder",
+    title: "Robot Builder (placeholder)",
+    description:
+      "Example stub for a Godot HTML5 export. Replace this with a real game later.",
+  },
+];
+---
+
+<BaseLayout title="Games | Mitchell">
+  <section class="mb-8">
+    <h1 class="mb-2 text-3xl font-bold tracking-tight text-slate-50">
+      Browser games
+    </h1>
+    <p class="max-w-2xl text-sm text-slate-300">
+      Godot experiments exported to HTML5/WebAssembly and embedded directly in
+      the browser. These are work-in-progress prototypes — expect bugs,
+      jank, and fun.
+    </p>
+  </section>
+
+  <section class="grid gap-4 md:grid-cols-2">
+    {games.map((game) => (
+      <article class="flex flex-col rounded-2xl border border-slate-800 bg-slate-900/40 p-5">
+        <h2 class="mb-1 text-lg font-semibold text-slate-50">
+          <a href={`/games/${game.slug}`} class="hover:text-sky-300">
+            {game.title}
+          </a>
+        </h2>
+        <p class="mb-3 text-sm text-slate-300">
+          {game.description}
+        </p>
+        <a
+          href={`/games/${game.slug}`}
+          class="mt-auto inline-flex w-max items-center gap-1 text-sm font-semibold text-sky-300 hover:text-sky-200"
+        >
+          Play →
+        </a>
+      </article>
+    ))}
+  </section>
+</BaseLayout>

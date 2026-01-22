@@ -1,0 +1,57 @@
+---
+const { title, bullets } = Astro.props;
+---
+
+<label class="relative block cursor-pointer">
+  <!-- Checkbox: controls open/close -->
+  <input type="checkbox" class="peer sr-only" />
+
+  <!-- Small inline card -->
+  <div
+    class="card transition-all duration-200 peer-hover:scale-[1.03] peer-hover:-translate-y-[1px]"
+  >
+    <h3 class="card-title">
+      {title}
+    </h3>
+    <ul class="card-list">
+      {bullets.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  </div>
+
+  <!-- Fullscreen overlay -->
+  <div
+    class="fixed inset-0 z-40 flex items-center justify-center
+           opacity-0 pointer-events-none
+           bg-black/0 backdrop-blur-0
+           transition-all duration-300
+           peer-checked:opacity-100 peer-checked:pointer-events-auto
+           peer-checked:bg-black/60 peer-checked:backdrop-blur-sm"
+  >
+    <div
+      class="card max-w-xl w-[90%] shadow-2xl border-ochre bg-pewter/95
+             transition-transform duration-300 scale-95
+             peer-checked:scale-105"
+    >
+      <div class="flex items-start justify-between gap-4">
+        <h3 class="card-title text-xl mb-2">
+          {title}
+        </h3>
+        <span class="text-xs text-paper/70">
+          ✕
+        </span>
+      </div>
+
+      <ul class="card-list space-y-2 mt-2">
+        {bullets.map((item) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+
+      <p class="mt-4 text-xs text-paper/80">
+        Click anywhere to close.
+      </p>
+    </div>
+  </div>
+</label>
