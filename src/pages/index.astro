@@ -40,7 +40,11 @@ const skills = [
 ---
 
 <BaseLayout title="Mitchell Cornwell | Software Engineer">
-  <section class="mb-12">
+  <!-- UNDER CONSTRUCTION: Remove the blur wrapper and overlay divs below to restore normal content -->
+  <div class="relative">
+    <!-- Main content with blur effect - remove "blur-sm pointer-events-none" to undo blur -->
+    <div class="blur-sm pointer-events-none">
+      <section class="mb-12">
     <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-paper">
       Mitchell Cornwell | Software Engineer
     </p>
@@ -225,5 +229,15 @@ const skills = [
       I fly freestyle FPV. <br />
        I love tiny whoops <br />
     </p>
+  </div>
+    </div>
+    
+    <!-- UNDER CONSTRUCTION: Remove this entire overlay div to restore normal visibility -->
+    <div class="absolute inset-0 flex items-center justify-center bg-black/40">
+      <div class="text-center">
+        <h2 class="text-4xl font-bold text-bone mb-2">🚧 Under Construction</h2>
+        <p class="text-lg text-paper">This page is being updated. Check back soon!</p>
+      </div>
+    </div>
   </div>
 </BaseLayout>
