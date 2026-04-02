@@ -8,7 +8,7 @@ const skills = [
     bullets: [
       "Modern UI development with TypeScript",
       "Modern UI development with ReactJS and Astro",
-      "Created UIs used by Fortune 500 companies",
+      "Created UIs used by Insurance Agents working on behalf of Fortune 500 companies",
     ],
   },
   {
@@ -20,11 +20,11 @@ const skills = [
     ],
   },
   {
-    title: "SQL & Databases",
+    title: "AWS",
     bullets: [
-      "Schema design & optimization",
-      "Debugging and performance tuning",
-      "Complex stored procedures & queries",
+      "SNS",
+      "SQS",
+      "Lambdas",
     ],
   },
   {
@@ -43,13 +43,13 @@ const skills = [
   <!-- UNDER CONSTRUCTION: Remove the blur wrapper and overlay divs below to restore normal content -->
   <div class="relative">
     <!-- Main content with blur effect - remove "blur-sm pointer-events-none" to undo blur -->
-    <div class="blur-sm pointer-events-none">
+    <!-- <div class="blur-sm pointer-events-none"> -->
       <section class="mb-12">
-    <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-paper">
+    <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan">
       Mitchell Cornwell | Software Engineer
     </p>
     <h1
-      class="mb-4 text-4xl font-extrabold tracking-tight text-bone sm:text-5xl"
+      class="mb-4 text-4xl font-extrabold tracking-tight text-base sm:text-5xl"
     >
       <span class="typewriter-heading">
         Hi, I'm Mitchell.
@@ -57,10 +57,9 @@ const skills = [
     </h1>
 
     <!--Maybe extract the below to an About Me section? -->
-    <p class="max-w-2xl text-bone">
+    <p class="max-w-2xl text-base">
       I have been working professionally as a software engineer since 2017. I
-      mostly do backend web development but I have experience doing frontend UIs
-      for Fortune 500 companies as well.
+      mostly do backend web development but I have experience creating professional frontend UIs as well.
       <br /><br />
        I enjoy a lot of different hobbies including
       <span class="text-highlight">game design</span> & {" "}
@@ -71,7 +70,8 @@ const skills = [
       <span class="text-highlight">music production</span>,{" "}
       <span class="text-highlight">digital art</span>,{" "}
       <span class="text-highlight">animation</span>,{" "}
-      <span class="text-highlight">video production</span>,{" "}
+      <span class="text-highlight">video editing & production</span>,{" "}
+      <span class="text-highlight">3D Modeling</span>,{" "}
       <span class="text-highlight">3D Printing</span>, and {" "}
       <span class="text-highlight">playing video games</span>.{" "}
     </p>
@@ -80,14 +80,14 @@ const skills = [
       <a
         href="/projects"
         transition:name="projects-cta"
-        class="rounded-full border border-ochre bg-ochre/20 px-4 py-2 text-sm font-semibold text-buttercream hover:bg-ochre/30"
+        class="btn btn-primary"
       >
         View projects
       </a>
 
       <a
         href="/games"
-        class="rounded-full border border-pewter px-4 py-2 text-sm font-semibold text-bone hover:border-sage hover:text-sage"
+        class="btn btn-secondary"
       >
         Play games in the browser
       </a>
@@ -95,11 +95,11 @@ const skills = [
   </section>
 
   <section class="mt-16">
-    <h2 class="mb-6 text-2xl font-bold tracking-tight text-paper">
+    <h2 class="mb-6 text-2xl font-bold tracking-tight text-cyan">
       Career Highlights - Under Construction
     </h2>
 
-    <p class="max-w-2xl mb-10 text-sm text-bone">
+    <p class="max-w-2xl mb-10 text-sm text-base">
       I've worked on a range of projects professionally — from internal tooling,
       to customer-facing web apps, to backend automation. Here's a quick
       overview of the technologies I’ve used in real-world applications:
@@ -113,106 +113,10 @@ const skills = [
       }
     </div>
   </section>
-
-  <!-- <section class="mt-16">
-    <h2 class="mb-6 text-2xl font-bold tracking-tight text-paper">
-      Career Highlights - Under Construction
-    </h2>
-
-    <p class="max-w-2xl mb-10 text-sm text-bone">
-      I've worked on a range of projects professionally — from internal tooling,
-      to customer-facing web apps, to backend automation. Here's a quick
-      overview of the technologies I’ve used in real-world applications:
-    </p>
-
-    <div class="grid gap-8 md:grid-cols-2">
-      <label class="relative block cursor-pointer">
-        <input type="checkbox" class="peer sr-only" />
-
-        <div
-          class="card transition-all duration-200 peer-hover:scale-[1.03] peer-hover:-translate-y-[1px]"
-        >
-          <h3 class="card-title">JavaScript / TypeScript</h3>
-          <ul class="card-list">
-            <li>Modern UI development with TypeScript</li>
-            <li>Modern UI development with ReactJS and Astro</li>
-            <li>Created UIs used by Fortune 500 companies</li>
-          </ul>
-        </div>
-
-        <div
-          class="fixed inset-0 z-40 hidden items-center justify-center bg-black/60 backdrop-blur-sm
-           peer-checked:flex"
-        >
-          <div
-            class="card max-w-xl w-[90%] scale-110 border-ochre bg-pewter/90 shadow-2xl"
-          >
-            <h3 class="card-title text-xl mb-4">JavaScript / TypeScript</h3>
-            <ul class="card-list space-y-2">
-              <li>Modern UI development with TypeScript</li>
-              <li>Modern UI development with ReactJS and Astro</li>
-              <li>Created UIs used by Fortune 500 companies</li>
-            </ul>
-
-            <p class="mt-4 text-xs text-paper/80">
-              Click anywhere outside this box (or again on the card) to close.
-            </p>
-          </div>
-        </div>
-      </label>
-      <label class="relative cursor-pointer">
-        <input type="radio" name="card-select" class="peer sr-only" />
-
-        <div
-          class="card transition-all duration-300 peer-checked:scale-[1.05] peer-checked:-translate-y-1 peer-checked:bg-buttercream/15"
-        >
-          <h3 class="card-title peer-checked:text-buttercream">Java</h3>
-          <ul class="card-list">
-            <li>Backend work with .NET APIs</li>
-            <li>Internal services and systems integrations</li>
-            <li>RESTful endpoints and data modeling</li>
-          </ul>
-        </div>
-      </label>
-
-      <label class="relative cursor-pointer">
-        <input type="radio" name="card-select" class="peer sr-only" />
-        <div
-          class="card transition-all duration-300 peer-checked:scale-[1.05] peer-checked:-translate-y-1 peer-checked:bg-buttercream/15"
-        >
-          <h3 class="card-title peer-checked:text-buttercream">
-            SQL & Databases
-          </h3>
-          <ul class="card-list">
-            <li>Schema design & optimization</li>
-            <li>Debugging and performance tuning</li>
-            <li>Complex stored procedures & queries</li>
-          </ul>
-        </div>
-      </label>
-      <label class="relative cursor-pointer">
-        <input type="radio" name="card-select" class="peer sr-only" />
-        <div
-          class="card transition-all duration-300 peer-checked:scale-[1.05] peer-checked:-translate-y-1 peer-checked:bg-buttercream/15"
-        >
-          <h3 class="card-title peer-checked:text-buttercream">
-            DevOps / Cloud / Automation
-          </h3>
-          <ul class="card-list">
-            <li>AWS deployment & infrastructure work</li>
-            <li>CI/CD pipelines & build automation</li>
-            <li>Automated unit testing & user acceptance testing</li>
-            <li>Monitoring, logging, and remote debugging</li>
-          </ul>
-        </div>
-      </label>
-    </div>
-  </section>
-	 -->
   <br />
 
   <div class="card group">
-    <h3 class="card-title group-hover:text-bone">Game development</h3>
+    <h3 class="card-title group-hover:text-base">Game development</h3>
     <p class="card-text">
       <ul>
         2D game development experience in:
@@ -224,7 +128,7 @@ const skills = [
   <br />
 
   <div class="card group">
-    <h3 class="card-title group-hover:text-bone">Freestyle FPV</h3>
+    <h3 class="card-title group-hover:text-base">Freestyle FPV</h3>
     <p class="card-text">
       I fly freestyle FPV. <br />
        I love tiny whoops <br />
@@ -233,11 +137,11 @@ const skills = [
     </div>
     
     <!-- UNDER CONSTRUCTION: Remove this entire overlay div to restore normal visibility -->
-    <div class="absolute inset-0 flex items-center justify-center bg-black/40">
+    <!-- <div class="absolute inset-0 flex items-center justify-center bg-black/40">
       <div class="text-center">
-        <h2 class="text-4xl font-bold text-bone mb-2">🚧 Under Construction</h2>
-        <p class="text-lg text-paper">This page is being updated. Check back soon!</p>
-      </div>
+        <h2 class="text-4xl font-bold text-base mb-2">🚧 Under Construction</h2>
+        <p class="text-lg text-cyan">This page is being updated. Check back soon!</p>
+      </div> -->
     </div>
   </div>
 </BaseLayout>
