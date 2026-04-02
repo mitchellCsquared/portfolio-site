@@ -1,0 +1,183 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="About Me | Mitchell Cornwell">
+  <section class="mb-12">
+    <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan">
+      About Me
+    </p>
+    <h1 class="mb-6 text-4xl font-extrabold tracking-tight text-base sm:text-5xl">
+      A bit about me
+    </h1>
+
+    <div class="max-w-3xl space-y-6 text-base">
+      <p>
+        I have been working professionally as a software engineer since 2017. I
+        mostly do backend web development but I have experience creating professional frontend UIs as well.
+      </p>
+
+      <p>
+        I enjoy a lot of different hobbies including
+        <span class="text-highlight">game design</span> & {" "}
+        <span class="text-highlight">game development</span>,{" "}
+        <span class="text-highlight">electronics</span>,{" "}
+        <span class="text-highlight">freestyle FPV</span>,{" "}
+        <span class="text-highlight">music</span> & {" "}
+        <span class="text-highlight">music production</span>,{" "}
+        <span class="text-highlight">digital art</span>,{" "}
+        <span class="text-highlight">animation</span>,{" "}
+        <span class="text-highlight">video editing & production</span>,{" "}
+        <span class="text-highlight">3D Modeling</span>,{" "}
+        <span class="text-highlight">3D Printing</span>, and {" "}
+        <span class="text-highlight">playing video games</span>.{" "}
+      </p>
+    </div>
+  </section>
+
+  <section class="mt-16">
+    <h2 class="mb-8 text-2xl font-bold tracking-tight text-cyan">
+      My Hobbies
+    </h2>
+
+    <div class="grid gap-6 md:grid-cols-2">
+      <label class="relative block cursor-pointer">
+        <input type="checkbox" class="peer sr-only" />
+        <div class="card transition-all duration-200 peer-hover:scale-[1.03] peer-hover:-translate-y-[1px]">
+          <h3 class="card-title">Game Development</h3>
+          <p class="card-text">
+            I have 2D game development experience in:
+            <ul class="card-list mt-2">
+              <li>Godot</li>
+              <li>Unity</li>
+            </ul>
+          </p>
+        </div>
+        <div class="fixed inset-0 z-40 flex items-center justify-center opacity-0 pointer-events-none bg-black/0 backdrop-blur-0 transition-all duration-300 peer-checked:opacity-100 peer-checked:pointer-events-auto peer-checked:bg-black/60 peer-checked:backdrop-blur-sm">
+          <div class="card card-expanded max-w-3xl w-[95%] shadow-2xl transition-transform duration-300 scale-150 peer-checked:scale-150">
+            <div class="flex items-start justify-between gap-4">
+              <h3 class="card-title text-xl mb-2">Game Development</h3>
+              <span class="text-xs text-base/70">✕</span>
+            </div>
+            <p class="card-text">
+              I have 2D game development experience in:
+              <ul class="card-list mt-2">
+                <li>Godot</li>
+                <li>Unity</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </label>
+
+      <label class="relative block cursor-pointer">
+        <input type="checkbox" class="peer sr-only" />
+        <div class="card transition-all duration-200 peer-hover:scale-[1.03] peer-hover:-translate-y-[1px]">
+          <h3 class="card-title">Freestyle FPV</h3>
+          <p class="card-text">
+            I fly freestyle FPV drones. <br/>
+            I love tiny whoops and exploring the technical challenges of aerial piloting. <br/>
+            I love the creativity and technical challenge of building and tuning my own drones, and the thrill of flying them through visually aesthetic and complex environments. <br/>
+          </p>
+        </div>
+        <div class="fixed inset-0 z-40 flex items-center justify-center opacity-0 pointer-events-none bg-black/0 backdrop-blur-0 transition-all duration-300 peer-checked:opacity-100 peer-checked:pointer-events-auto peer-checked:bg-black/60 peer-checked:backdrop-blur-sm">
+          <div class="card card-expanded max-w-3xl w-[95%] shadow-2xl transition-transform duration-300 scale-150 peer-checked:scale-150">
+            <div class="flex items-start justify-between gap-4">
+              <h3 class="card-title text-xl mb-2">Freestyle FPV</h3>
+              <span class="text-xs text-base/70">✕</span>
+            </div>
+            <p class="card-text">
+              I fly freestyle FPV drones. <br/>
+              I love tiny whoops and exploring the technical challenges of aerial piloting. <br/>
+              I love the creativity and technical challenge of building and tuning my own drones, and the thrill of flying them through visually aesthetic and complex environments. <br/>
+            </p>
+          </div>
+        </div>
+      </label>
+
+      <label class="relative block cursor-pointer">
+        <input type="checkbox" class="peer sr-only" />
+        <div class="card transition-all duration-200 peer-hover:scale-[1.03] peer-hover:-translate-y-[1px]">
+          <h3 class="card-title">Music Production</h3>
+          <p class="card-text">
+            I enjoy creating and producing music in my spare time, exploring different genres and sounds.
+          </p>
+        </div>
+        <div class="fixed inset-0 z-40 flex items-center justify-center opacity-0 pointer-events-none bg-black/0 backdrop-blur-0 transition-all duration-300 peer-checked:opacity-100 peer-checked:pointer-events-auto peer-checked:bg-black/60 peer-checked:backdrop-blur-sm">
+          <div class="card card-expanded max-w-3xl w-[95%] shadow-2xl transition-transform duration-300 scale-150 peer-checked:scale-150">
+            <div class="flex items-start justify-between gap-4">
+              <h3 class="card-title text-xl mb-2">Music Production</h3>
+              <span class="text-xs text-base/70">✕</span>
+            </div>
+            <p class="card-text">
+              I enjoy creating and producing music in my spare time, exploring different genres and sounds.
+            </p>
+          </div>
+        </div>
+      </label>
+
+      <label class="relative block cursor-pointer">
+        <input type="checkbox" class="peer sr-only" />
+        <div class="card transition-all duration-200 peer-hover:scale-[1.03] peer-hover:-translate-y-[1px]">
+          <h3 class="card-title">3D & Digital Art</h3>
+          <p class="card-text">
+            From 3D modeling and 3D printing to digital art and animation, I love exploring creative visual mediums.
+          </p>
+        </div>
+        <div class="fixed inset-0 z-40 flex items-center justify-center opacity-0 pointer-events-none bg-black/0 backdrop-blur-0 transition-all duration-300 peer-checked:opacity-100 peer-checked:pointer-events-auto peer-checked:bg-black/60 peer-checked:backdrop-blur-sm">
+          <div class="card card-expanded max-w-3xl w-[95%] shadow-2xl transition-transform duration-300 scale-150 peer-checked:scale-150">
+            <div class="flex items-start justify-between gap-4">
+              <h3 class="card-title text-xl mb-2">3D & Digital Art</h3>
+              <span class="text-xs text-base/70">✕</span>
+            </div>
+            <p class="card-text">
+              From 3D modeling and 3D printing to digital art and animation, I love exploring creative visual mediums.
+            </p>
+          </div>
+        </div>
+      </label>
+
+      <label class="relative block cursor-pointer">
+        <input type="checkbox" class="peer sr-only" />
+        <div class="card transition-all duration-200 peer-hover:scale-[1.03] peer-hover:-translate-y-[1px]">
+          <h3 class="card-title">Video Production</h3>
+          <p class="card-text">
+            I have experience with video editing and production, bringing creative visions to life through motion and sound.
+          </p>
+        </div>
+        <div class="fixed inset-0 z-40 flex items-center justify-center opacity-0 pointer-events-none bg-black/0 backdrop-blur-0 transition-all duration-300 peer-checked:opacity-100 peer-checked:pointer-events-auto peer-checked:bg-black/60 peer-checked:backdrop-blur-sm">
+          <div class="card card-expanded max-w-3xl w-[95%] shadow-2xl transition-transform duration-300 scale-150 peer-checked:scale-150">
+            <div class="flex items-start justify-between gap-4">
+              <h3 class="card-title text-xl mb-2">Video Production</h3>
+              <span class="text-xs text-base/70">✕</span>
+            </div>
+            <p class="card-text">
+              I have experience with video editing and production, bringing creative visions to life through motion and sound.
+            </p>
+          </div>
+        </div>
+      </label>
+
+      <label class="relative block cursor-pointer">
+        <input type="checkbox" class="peer sr-only" />
+        <div class="card transition-all duration-200 peer-hover:scale-[1.03] peer-hover:-translate-y-[1px]">
+          <h3 class="card-title">Electronics & Tinkering</h3>
+          <p class="card-text">
+            I enjoy working with electronics and building projects that combine hardware and software.
+          </p>
+        </div>
+        <div class="fixed inset-0 z-40 flex items-center justify-center opacity-0 pointer-events-none bg-black/0 backdrop-blur-0 transition-all duration-300 peer-checked:opacity-100 peer-checked:pointer-events-auto peer-checked:bg-black/60 peer-checked:backdrop-blur-sm">
+          <div class="card card-expanded max-w-3xl w-[95%] shadow-2xl transition-transform duration-300 scale-150 peer-checked:scale-150">
+            <div class="flex items-start justify-between gap-4">
+              <h3 class="card-title text-xl mb-2">Electronics & Tinkering</h3>
+              <span class="text-xs text-base/70">✕</span>
+            </div>
+            <p class="card-text">
+              I enjoy working with electronics and building projects that combine hardware and software.
+            </p>
+          </div>
+        </div>
+      </label>
+    </div>
+  </section>
+</BaseLayout>

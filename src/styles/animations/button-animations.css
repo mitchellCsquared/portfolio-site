@@ -1,0 +1,83 @@
+/* ============================================================================
+   BUTTON ANIMATIONS
+   ============================================================================ */
+
+/* Primary button flicker animation */
+@keyframes btnPrimaryFlicker {
+  0% { background-color: rgba(255, 212, 0, 0.2); }
+  3% { background-color: rgba(255, 212, 0, 0.3); }
+  4% { background-color: rgba(255, 212, 0, 0.2); }
+  7% { background-color: rgba(255, 212, 0, 0.25); }
+  8% { background-color: rgba(255, 212, 0, 0.2); }
+  11% { background-color: rgba(255, 212, 0, 0.35); }
+  12% { background-color: rgba(255, 212, 0, 0.2); }
+  18% { background-color: rgba(255, 212, 0, 0.2); }
+  19% { background-color: rgba(255, 212, 0, 0.28); }
+  21% { background-color: rgba(255, 212, 0, 0.2); }
+  24% { background-color: rgba(255, 212, 0, 0.32); }
+  25% { background-color: rgba(255, 212, 0, 0.2); }
+  34% { background-color: rgba(255, 212, 0, 0.2); }
+  35% { background-color: rgba(255, 212, 0, 0.26); }
+  37% { background-color: rgba(255, 212, 0, 0.2); }
+  41% { background-color: rgba(255, 212, 0, 0.34); }
+  42% { background-color: rgba(255, 212, 0, 0.2); }
+  47% { background-color: rgba(255, 212, 0, 0.29); }
+  48% { background-color: rgba(255, 212, 0, 0.2); }
+  56% { background-color: rgba(255, 212, 0, 0.2); }
+  57% { background-color: rgba(255, 212, 0, 0.31); }
+  59% { background-color: rgba(255, 212, 0, 0.2); }
+  63% { background-color: rgba(255, 212, 0, 0.25); }
+  64% { background-color: rgba(255, 212, 0, 0.2); }
+  68% { background-color: rgba(255, 212, 0, 0.33); }
+  69% { background-color: rgba(255, 212, 0, 0.2); }
+  73% { background-color: rgba(255, 212, 0, 0.27); }
+  74% { background-color: rgba(255, 212, 0, 0.2); }
+  79% { background-color: rgba(255, 212, 0, 0.36); }
+  80% { background-color: rgba(255, 212, 0, 0.2); }
+  89% { background-color: rgba(255, 212, 0, 0.2); }
+  90% { background-color: rgba(255, 212, 0, 0.26); }
+  92% { background-color: rgba(255, 212, 0, 0.30); }
+  96% { background-color: rgba(255, 212, 0, 0.2); }
+  97% { background-color: rgba(255, 212, 0, 0.2); }
+  100% { background-color: rgba(255, 212, 0, 0.2); }
+}
+
+/* Secondary button flicker animation */
+@keyframes btnSecondaryFlicker {
+  0% { background-color: rgba(124, 77, 255, 0.15); }
+  3% { background-color: rgba(124, 77, 255, 0.25); }
+  4% { background-color: rgba(124, 77, 255, 0.15); }
+  7% { background-color: rgba(124, 77, 255, 0.20); }
+  8% { background-color: rgba(124, 77, 255, 0.15); }
+  11% { background-color: rgba(124, 77, 255, 0.30); }
+  12% { background-color: rgba(124, 77, 255, 0.15); }
+  18% { background-color: rgba(124, 77, 255, 0.15); }
+  19% { background-color: rgba(124, 77, 255, 0.23); }
+  21% { background-color: rgba(124, 77, 255, 0.15); }
+  24% { background-color: rgba(124, 77, 255, 0.27); }
+  25% { background-color: rgba(124, 77, 255, 0.15); }
+  34% { background-color: rgba(124, 77, 255, 0.15); }
+  35% { background-color: rgba(124, 77, 255, 0.21); }
+  37% { background-color: rgba(124, 77, 255, 0.15); }
+  41% { background-color: rgba(124, 77, 255, 0.29); }
+  42% { background-color: rgba(124, 77, 255, 0.15); }
+  47% { background-color: rgba(124, 77, 255, 0.24); }
+  48% { background-color: rgba(124, 77, 255, 0.15); }
+  56% { background-color: rgba(124, 77, 255, 0.15); }
+  57% { background-color: rgba(124, 77, 255, 0.26); }
+  59% { background-color: rgba(124, 77, 255, 0.15); }
+  63% { background-color: rgba(124, 77, 255, 0.20); }
+  64% { background-color: rgba(124, 77, 255, 0.15); }
+  68% { background-color: rgba(124, 77, 255, 0.28); }
+  69% { background-color: rgba(124, 77, 255, 0.15); }
+  73% { background-color: rgba(124, 77, 255, 0.22); }
+  74% { background-color: rgba(124, 77, 255, 0.15); }
+  79% { background-color: rgba(124, 77, 255, 0.31); }
+  80% { background-color: rgba(124, 77, 255, 0.15); }
+  89% { background-color: rgba(124, 77, 255, 0.15); }
+  90% { background-color: rgba(124, 77, 255, 0.21); }
+  92% { background-color: rgba(124, 77, 255, 0.25); }
+  96% { background-color: rgba(124, 77, 255, 0.15); }
+  97% { background-color: rgba(124, 77, 255, 0.15); }
+  100% { background-color: rgba(124, 77, 255, 0.15); }
+}

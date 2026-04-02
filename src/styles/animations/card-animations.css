@@ -1,0 +1,184 @@
+/* ============================================================================
+   CARD ANIMATIONS
+   ============================================================================ */
+
+/* Static flicker animation for cards - randomized */
+@keyframes cardFlicker {
+  0% { background-color: rgba(0, 183, 168, 0.08); }
+  3% { background-color: rgba(0, 229, 212, 0.14); }
+  4% { background-color: rgba(0, 183, 168, 0.08); }
+  7% { background-color: rgba(0, 229, 212, 0.09); }
+  8% { background-color: rgba(0, 183, 168, 0.08); }
+  11% { background-color: rgba(0, 229, 212, 0.16); }
+  12% { background-color: rgba(0, 183, 168, 0.08); }
+  18% { background-color: rgba(0, 183, 168, 0.08); }
+  19% { background-color: rgba(0, 229, 212, 0.11); }
+  21% { background-color: rgba(0, 183, 168, 0.08); }
+  24% { background-color: rgba(0, 229, 212, 0.13); }
+  25% { background-color: rgba(0, 183, 168, 0.08); }
+  34% { background-color: rgba(0, 183, 168, 0.08); }
+  35% { background-color: rgba(0, 229, 212, 0.10); }
+  37% { background-color: rgba(0, 183, 168, 0.08); }
+  41% { background-color: rgba(0, 229, 212, 0.15); }
+  42% { background-color: rgba(0, 183, 168, 0.08); }
+  47% { background-color: rgba(0, 229, 212, 0.12); }
+  48% { background-color: rgba(0, 183, 168, 0.08); }
+  56% { background-color: rgba(0, 183, 168, 0.08); }
+  57% { background-color: rgba(0, 229, 212, 0.14); }
+  59% { background-color: rgba(0, 183, 168, 0.08); }
+  63% { background-color: rgba(0, 229, 212, 0.09); }
+  64% { background-color: rgba(0, 183, 168, 0.08); }
+  68% { background-color: rgba(0, 229, 212, 0.13); }
+  69% { background-color: rgba(0, 183, 168, 0.08); }
+  73% { background-color: rgba(0, 229, 212, 0.11); }
+  74% { background-color: rgba(0, 183, 168, 0.08); }
+  79% { background-color: rgba(0, 229, 212, 0.15); }
+  80% { background-color: rgba(0, 183, 168, 0.08); }
+  89% { background-color: rgba(0, 183, 168, 0.08); }
+  90% { background-color: rgba(0, 229, 212, 0.10); }
+  92% { background-color: rgba(0, 229, 212, 0.12); }
+  96% { background-color: rgba(0, 183, 168, 0.08); }
+  97% { background-color: rgba(0, 183, 168, 0.08); }
+  100% { background-color: rgba(0, 183, 168, 0.08); }
+}
+
+/* Scratchy VHS scan lines animation */
+@keyframes scratchLines {
+  0% { 
+    opacity: 0;
+    transform: translateY(0) scaleX(1);
+    clip-path: inset(0);
+  }
+  5% { 
+    opacity: 0.7;
+    transform: translateY(-3px) scaleX(0.95);
+    clip-path: inset(0 5% 0 0);
+  }
+  10% { 
+    opacity: 0.4;
+    transform: translateY(-1px) scaleX(1.02);
+    clip-path: inset(0 0 0 8%);
+  }
+  15% { 
+    opacity: 0;
+    transform: translateY(0) scaleX(1);
+    clip-path: inset(0);
+  }
+  20% { 
+    opacity: 0.6;
+    transform: translateY(2px) scaleX(0.98);
+    clip-path: inset(0 3% 0 5%);
+  }
+  25% { 
+    opacity: 0.3;
+    transform: translateY(1px) scaleX(1.01);
+    clip-path: inset(0 0 0 10%);
+  }
+  30% { 
+    opacity: 0;
+    transform: translateY(0) scaleX(1);
+    clip-path: inset(0);
+  }
+  35% { 
+    opacity: 0.8;
+    transform: translateY(-2px) scaleX(0.97);
+    clip-path: inset(0 6% 0 2%);
+  }
+  40% { 
+    opacity: 0.5;
+    transform: translateY(0px) scaleX(1.03);
+    clip-path: inset(0 0 0 7%);
+  }
+  45% { 
+    opacity: 0;
+    transform: translateY(0) scaleX(1);
+    clip-path: inset(0);
+  }
+  50% { 
+    opacity: 0.7;
+    transform: translateY(1px) scaleX(0.96);
+    clip-path: inset(0 4% 0 4%);
+  }
+  55% { 
+    opacity: 0.4;
+    transform: translateY(-2px) scaleX(1.02);
+    clip-path: inset(0 0 0 9%);
+  }
+  60% { 
+    opacity: 0;
+    transform: translateY(0) scaleX(1);
+    clip-path: inset(0);
+  }
+  65% { 
+    opacity: 0.65;
+    transform: translateY(-1px) scaleX(0.99);
+    clip-path: inset(0 7% 0 1%);
+  }
+  70% { 
+    opacity: 0.35;
+    transform: translateY(2px) scaleX(1.01);
+    clip-path: inset(0 0 0 6%);
+  }
+  75% { 
+    opacity: 0;
+    transform: translateY(0) scaleX(1);
+    clip-path: inset(0);
+  }
+  80% { 
+    opacity: 0.75;
+    transform: translateY(0px) scaleX(0.98);
+    clip-path: inset(0 2% 0 8%);
+  }
+  85% { 
+    opacity: 0.45;
+    transform: translateY(-1px) scaleX(1.03);
+    clip-path: inset(0 0 0 4%);
+  }
+  90% { 
+    opacity: 0;
+    transform: translateY(0) scaleX(1);
+    clip-path: inset(0);
+  }
+  95% { 
+    opacity: 0.6;
+    transform: translateY(1px) scaleX(0.97);
+    clip-path: inset(0 5% 0 3%);
+  }
+  100% { 
+    opacity: 0;
+    transform: translateY(0) scaleX(1);
+    clip-path: inset(0);
+  }
+}
+
+/* VHS horizontal glitch warp effect */
+@keyframes warpLines {
+  0% { transform: skewX(0deg) translateX(0); }
+  5% { transform: skewX(-2deg) translateX(-4px); }
+  10% { transform: skewX(3deg) translateX(6px); }
+  15% { transform: skewX(-1.5deg) translateX(-3px); }
+  20% { transform: skewX(2.5deg) translateX(5px); }
+  25% { transform: skewX(-3deg) translateX(-8px); }
+  30% { transform: skewX(2deg) translateX(4px); }
+  35% { transform: skewX(-2.5deg) translateX(-6px); }
+  40% { transform: skewX(3.5deg) translateX(7px); }
+  45% { transform: skewX(-1deg) translateX(-2px); }
+  50% { transform: skewX(2.8deg) translateX(6px); }
+  55% { transform: skewX(-2.2deg) translateX(-5px); }
+  60% { transform: skewX(3.2deg) translateX(8px); }
+  65% { transform: skewX(-1.8deg) translateX(-4px); }
+  70% { transform: skewX(2.3deg) translateX(5px); }
+  75% { transform: skewX(-3.1deg) translateX(-7px); }
+  80% { transform: skewX(1.5deg) translateX(3px); }
+  85% { transform: skewX(-2.7deg) translateX(-6px); }
+  90% { transform: skewX(2.9deg) translateX(6px); }
+  95% { transform: skewX(-1.2deg) translateX(-2px); }
+  100% { transform: skewX(0deg) translateX(0); }
+}
+
+/* Smooth unwarp after glitch */
+@keyframes unwarpLines {
+  0% { transform: skewX(-1.2deg) translateX(-2px); }
+  50% { transform: skewX(-0.3deg) translateX(-0.5px); }
+  100% { transform: skewX(0deg) translateX(0); }
+}

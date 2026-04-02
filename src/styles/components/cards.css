@@ -1,0 +1,129 @@
+/* ============================================================================
+   CARDS
+   ============================================================================ */
+
+@layer components {
+  .card {
+    @apply rounded-2xl border p-5 transition-all duration-300 relative overflow-hidden;
+    background-color: rgba(0, 183, 168, 0.08);
+    border-color: rgba(0, 183, 168, 0.25);
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 229, 212, 0.03) 0px,
+      rgba(0, 229, 212, 0.03) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .card:hover::before,
+  .card:focus-within::before,
+  .card:active::before {
+    animation: scratchLines 0.4s infinite;
+  }
+
+  .card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 229, 212, 0.05) 0px,
+      rgba(0, 229, 212, 0.05) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    transition: opacity 0.2s;
+  }
+
+  .card:hover::after,
+  .card:focus-within::after,
+  .card:active::after {
+    opacity: 1;
+    animation: warpLines 0.5s 1, unwarpLines 0.3s 0.5s 1 forwards;
+  }
+
+  .card:hover,
+  .card:focus-within,
+  .card:active {
+    @apply scale-[1.03] -translate-y-[1px];
+    background-color: rgba(0, 229, 212, 0.13);
+    border-color: #00E5D4;
+    animation: cardFlicker 6s infinite;
+  }
+
+  .card:active {
+    animation: cardFlicker 6s infinite;
+  }
+
+  .card-title {
+    @apply mb-2 text-sm font-bold text-cyan hover:text-base
+           transition-all duration-600;
+  }
+  
+  .card-list {
+    @apply list-disc pl-6 text-base marker:text-teal space-y-1;
+   }
+
+  .card-text {
+    @apply text-sm text-base;
+  }
+
+  /* Expanded card - shown in fullscreen overlay */
+  .card-expanded {
+    @apply p-8;
+    border-color: #00E5D4;
+  }
+
+  .card-expanded:hover,
+  .card-expanded:focus-within {
+    @apply scale-100 translate-y-0;
+    animation: none;
+  }
+
+  .card-expanded::before {
+    opacity: 1;
+  }
+
+  .card-expanded::after {
+    opacity: 1;
+  }
+
+  /* Expanded card title - larger when selected */
+  .card-expanded .card-title {
+    @apply text-2xl;
+  }
+
+  /* Expanded card text - larger when selected */
+  .card-expanded .card-text {
+    @apply text-base;
+  }
+
+  /* Expanded card list items - larger when selected */
+  .card-expanded .card-list {
+    @apply text-lg;
+  }
+
+  /* Apply flicker animation when checkbox is checked */
+  input:checked ~ div .card-expanded {
+    animation: cardFlicker 6s infinite;
+  }
+}
