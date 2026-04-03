@@ -8,7 +8,7 @@ const skills = [
     bullets: [
       "Modern UI development with TypeScript",
       "Modern UI development with ReactJS and Astro",
-      "Created UIs used by Fortune 500 companies",
+      "Created UIs used by Insurance Agents working on behalf of Fortune 500 companies",
     ],
   },
   {
@@ -20,11 +20,11 @@ const skills = [
     ],
   },
   {
-    title: "SQL & Databases",
+    title: "AWS",
     bullets: [
-      "Schema design & optimization",
-      "Debugging and performance tuning",
-      "Complex stored procedures & queries",
+      "SNS",
+      "SQS",
+      "Lambdas",
     ],
   },
   {
@@ -40,204 +40,344 @@ const skills = [
 ---
 
 <BaseLayout title="Mitchell Cornwell | Software Engineer">
-  <!-- UNDER CONSTRUCTION: Remove the blur wrapper and overlay divs below to restore normal content -->
-  <div class="relative">
-    <!-- Main content with blur effect - remove "blur-sm pointer-events-none" to undo blur -->
-    <div class="blur-sm pointer-events-none">
-      <section class="mb-12">
-    <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-paper">
-      Mitchell Cornwell | Software Engineer
-    </p>
-    <h1
-      class="mb-4 text-4xl font-extrabold tracking-tight text-bone sm:text-5xl"
-    >
-      <span class="typewriter-heading">
-        Hi, I'm Mitchell.
-      </span>
-    </h1>
+  <!-- Main content blurred out -->
+  <div class="blur-sm pointer-events-none select-none">
+    <section class="mb-12">
+      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-cyan">
+        Mitchell Cornwell | Software Engineer
+      </p>
+      <h1 class="mb-4 text-4xl font-extrabold tracking-tight text-base sm:text-5xl">
+        <span class="typewriter-heading">
+          Hi, I'm Mitchell.
+        </span>
+      </h1>
 
-    <!--Maybe extract the below to an About Me section? -->
-    <p class="max-w-2xl text-bone">
-      I have been working professionally as a software engineer since 2017. I
-      mostly do backend web development but I have experience doing frontend UIs
-      for Fortune 500 companies as well.
-      <br /><br />
-       I enjoy a lot of different hobbies including
-      <span class="text-highlight">game design</span> & {" "}
-      <span class="text-highlight">game development</span>,{" "}
-      <span class="text-highlight">electronics</span>,{" "}
-      <span class="text-highlight">freestyle FPV</span>,{" "}
-      <span class="text-highlight">music</span> & {" "}
-      <span class="text-highlight">music production</span>,{" "}
-      <span class="text-highlight">digital art</span>,{" "}
-      <span class="text-highlight">animation</span>,{" "}
-      <span class="text-highlight">video production</span>,{" "}
-      <span class="text-highlight">3D Printing</span>, and {" "}
-      <span class="text-highlight">playing video games</span>.{" "}
-    </p>
+      <p class="max-w-2xl text-base">
+        I have been working professionally as a software engineer since 2017. I
+        mostly do backend web development but I have experience creating professional frontend UIs as well.
+      </p>
 
-    <div class="mt-6 flex flex-wrap gap-3">
-      <a
-        href="/projects"
-        transition:name="projects-cta"
-        class="rounded-full border border-ochre bg-ochre/20 px-4 py-2 text-sm font-semibold text-buttercream hover:bg-ochre/30"
-      >
-        View projects
-      </a>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="/projects" transition:name="projects-cta" class="btn btn-primary">
+          View projects
+        </a>
+        <a href="/games" class="btn btn-secondary">
+          Play games in the browser
+        </a>
+      </div>
+    </section>
 
-      <a
-        href="/games"
-        class="rounded-full border border-pewter px-4 py-2 text-sm font-semibold text-bone hover:border-sage hover:text-sage"
-      >
-        Play games in the browser
-      </a>
+    <section class="mt-16">
+      <h2 class="mb-6 text-2xl font-bold tracking-tight text-cyan">
+        Career Highlights
+      </h2>
+
+      <p class="max-w-2xl mb-10 text-sm text-base">
+        I've worked on a range of projects professionally — from internal tooling,
+        to customer-facing web apps, to backend automation. Here's a quick
+        overview of the technologies I've used in real-world applications:
+      </p>
+
+      <div class="grid gap-8 md:grid-cols-2">
+        {
+          skills.map((skill) => (
+            <SkillCard title={skill.title} bullets={skill.bullets} />
+          ))
+        }
+      </div>
+    </section>
+  </div>
+
+  <!-- Under Construction Overlay -->
+  <div class="uc-overlay">
+    <div class="uc-content">
+      <h2 class="uc-heading-wrap">
+        <span class="typewriter-heading uc-heading">
+          Under Construction
+        </span>
+      </h2>
     </div>
-  </section>
 
-  <section class="mt-16">
-    <h2 class="mb-6 text-2xl font-bold tracking-tight text-paper">
-      Career Highlights - Under Construction
-    </h2>
+    <div class="uc-bottom">
+      <div class="audio-player" id="audioPlayer">
+        <audio id="ucAudio" preload="metadata">
+          <source src="/music/track.wav" type="audio/wav" />
+        </audio>
 
-    <p class="max-w-2xl mb-10 text-sm text-bone">
-      I've worked on a range of projects professionally — from internal tooling,
-      to customer-facing web apps, to backend automation. Here's a quick
-      overview of the technologies I’ve used in real-world applications:
-    </p>
-
-    <div class="grid gap-8 md:grid-cols-2">
-      {
-        skills.map((skill) => (
-          <SkillCard title={skill.title} bullets={skill.bullets} />
-        ))
-      }
-    </div>
-  </section>
-
-  <!-- <section class="mt-16">
-    <h2 class="mb-6 text-2xl font-bold tracking-tight text-paper">
-      Career Highlights - Under Construction
-    </h2>
-
-    <p class="max-w-2xl mb-10 text-sm text-bone">
-      I've worked on a range of projects professionally — from internal tooling,
-      to customer-facing web apps, to backend automation. Here's a quick
-      overview of the technologies I’ve used in real-world applications:
-    </p>
-
-    <div class="grid gap-8 md:grid-cols-2">
-      <label class="relative block cursor-pointer">
-        <input type="checkbox" class="peer sr-only" />
-
-        <div
-          class="card transition-all duration-200 peer-hover:scale-[1.03] peer-hover:-translate-y-[1px]"
-        >
-          <h3 class="card-title">JavaScript / TypeScript</h3>
-          <ul class="card-list">
-            <li>Modern UI development with TypeScript</li>
-            <li>Modern UI development with ReactJS and Astro</li>
-            <li>Created UIs used by Fortune 500 companies</li>
-          </ul>
+        <div class="audio-track-info">
+          <span class="audio-track-name">VHS Pursuit.wav</span>
         </div>
 
-        <div
-          class="fixed inset-0 z-40 hidden items-center justify-center bg-black/60 backdrop-blur-sm
-           peer-checked:flex"
-        >
-          <div
-            class="card max-w-xl w-[90%] scale-110 border-ochre bg-pewter/90 shadow-2xl"
-          >
-            <h3 class="card-title text-xl mb-4">JavaScript / TypeScript</h3>
-            <ul class="card-list space-y-2">
-              <li>Modern UI development with TypeScript</li>
-              <li>Modern UI development with ReactJS and Astro</li>
-              <li>Created UIs used by Fortune 500 companies</li>
-            </ul>
+        <div class="audio-controls">
+          <button class="audio-btn" id="playPauseBtn" aria-label="Play">
+            <svg id="playIcon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <svg id="pauseIcon" viewBox="0 0 24 24" fill="currentColor" width="20" height="20" style="display:none">
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+            </svg>
+          </button>
 
-            <p class="mt-4 text-xs text-paper/80">
-              Click anywhere outside this box (or again on the card) to close.
-            </p>
+          <div class="audio-time-wrap">
+            <span class="audio-time" id="currentTime">0:00</span>
+            <input type="range" class="audio-seek" id="seekBar" value="0" min="0" step="0.1" />
+            <span class="audio-time" id="duration">0:00</span>
+          </div>
+
+          <div class="audio-volume-wrap">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" class="audio-vol-icon">
+              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+            </svg>
+            <input type="range" class="audio-volume" id="volumeBar" value="80" min="0" max="100" />
           </div>
         </div>
-      </label>
-      <label class="relative cursor-pointer">
-        <input type="radio" name="card-select" class="peer sr-only" />
-
-        <div
-          class="card transition-all duration-300 peer-checked:scale-[1.05] peer-checked:-translate-y-1 peer-checked:bg-buttercream/15"
-        >
-          <h3 class="card-title peer-checked:text-buttercream">Java</h3>
-          <ul class="card-list">
-            <li>Backend work with .NET APIs</li>
-            <li>Internal services and systems integrations</li>
-            <li>RESTful endpoints and data modeling</li>
-          </ul>
-        </div>
-      </label>
-
-      <label class="relative cursor-pointer">
-        <input type="radio" name="card-select" class="peer sr-only" />
-        <div
-          class="card transition-all duration-300 peer-checked:scale-[1.05] peer-checked:-translate-y-1 peer-checked:bg-buttercream/15"
-        >
-          <h3 class="card-title peer-checked:text-buttercream">
-            SQL & Databases
-          </h3>
-          <ul class="card-list">
-            <li>Schema design & optimization</li>
-            <li>Debugging and performance tuning</li>
-            <li>Complex stored procedures & queries</li>
-          </ul>
-        </div>
-      </label>
-      <label class="relative cursor-pointer">
-        <input type="radio" name="card-select" class="peer sr-only" />
-        <div
-          class="card transition-all duration-300 peer-checked:scale-[1.05] peer-checked:-translate-y-1 peer-checked:bg-buttercream/15"
-        >
-          <h3 class="card-title peer-checked:text-buttercream">
-            DevOps / Cloud / Automation
-          </h3>
-          <ul class="card-list">
-            <li>AWS deployment & infrastructure work</li>
-            <li>CI/CD pipelines & build automation</li>
-            <li>Automated unit testing & user acceptance testing</li>
-            <li>Monitoring, logging, and remote debugging</li>
-          </ul>
-        </div>
-      </label>
-    </div>
-  </section>
-	 -->
-  <br />
-
-  <div class="card group">
-    <h3 class="card-title group-hover:text-bone">Game development</h3>
-    <p class="card-text">
-      <ul>
-        2D game development experience in:
-        <li>Godot</li>
-        <li>Unity</li>
-      </ul>
-    </p>
-  </div>
-  <br />
-
-  <div class="card group">
-    <h3 class="card-title group-hover:text-bone">Freestyle FPV</h3>
-    <p class="card-text">
-      I fly freestyle FPV. <br />
-       I love tiny whoops <br />
-    </p>
-  </div>
-    </div>
-    
-    <!-- UNDER CONSTRUCTION: Remove this entire overlay div to restore normal visibility -->
-    <div class="absolute inset-0 flex items-center justify-center bg-black/40">
-      <div class="text-center">
-        <h2 class="text-4xl font-bold text-bone mb-2">🚧 Under Construction</h2>
-        <p class="text-lg text-paper">This page is being updated. Check back soon!</p>
       </div>
     </div>
   </div>
 </BaseLayout>
+
+<style>
+  .uc-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    animation: overlayFlicker 6s infinite;
+    background-color: rgba(8, 18, 22, 0.88);
+  }
+
+  @keyframes overlayFlicker {
+    0%   { background-color: rgba(8, 18, 22, 0.88); }
+    3%   { background-color: rgba(0, 40, 36, 0.92); }
+    4%   { background-color: rgba(8, 18, 22, 0.88); }
+    7%   { background-color: rgba(0, 45, 40, 0.89); }
+    8%   { background-color: rgba(8, 18, 22, 0.88); }
+    11%  { background-color: rgba(0, 55, 48, 0.93); }
+    12%  { background-color: rgba(8, 18, 22, 0.88); }
+    18%  { background-color: rgba(8, 18, 22, 0.88); }
+    19%  { background-color: rgba(0, 42, 38, 0.90); }
+    21%  { background-color: rgba(8, 18, 22, 0.88); }
+    24%  { background-color: rgba(0, 48, 43, 0.91); }
+    25%  { background-color: rgba(8, 18, 22, 0.88); }
+    34%  { background-color: rgba(8, 18, 22, 0.88); }
+    35%  { background-color: rgba(0, 38, 34, 0.89); }
+    37%  { background-color: rgba(8, 18, 22, 0.88); }
+    41%  { background-color: rgba(0, 52, 46, 0.92); }
+    42%  { background-color: rgba(8, 18, 22, 0.88); }
+    47%  { background-color: rgba(0, 44, 40, 0.90); }
+    48%  { background-color: rgba(8, 18, 22, 0.88); }
+    56%  { background-color: rgba(8, 18, 22, 0.88); }
+    57%  { background-color: rgba(0, 50, 44, 0.92); }
+    59%  { background-color: rgba(8, 18, 22, 0.88); }
+    63%  { background-color: rgba(0, 40, 36, 0.89); }
+    64%  { background-color: rgba(8, 18, 22, 0.88); }
+    68%  { background-color: rgba(0, 48, 43, 0.91); }
+    69%  { background-color: rgba(8, 18, 22, 0.88); }
+    73%  { background-color: rgba(0, 43, 38, 0.90); }
+    74%  { background-color: rgba(8, 18, 22, 0.88); }
+    79%  { background-color: rgba(0, 54, 48, 0.93); }
+    80%  { background-color: rgba(8, 18, 22, 0.88); }
+    89%  { background-color: rgba(8, 18, 22, 0.88); }
+    90%  { background-color: rgba(0, 41, 37, 0.89); }
+    92%  { background-color: rgba(0, 46, 41, 0.91); }
+    96%  { background-color: rgba(8, 18, 22, 0.88); }
+    97%  { background-color: rgba(8, 18, 22, 0.88); }
+    100% { background-color: rgba(8, 18, 22, 0.88); }
+  }
+
+  .uc-content {
+    text-align: center;
+  }
+
+  .uc-bottom {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .uc-heading-wrap {
+    margin: 0;
+  }
+
+  .uc-heading {
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  /* Audio Player */
+  .audio-player {
+    margin-top: 2rem;
+    padding: 1rem 1.25rem;
+    border-radius: 1rem;
+    border: 1px solid rgb(124, 77, 255);
+    background-color: rgba(124, 77, 255, 0.2);
+    width: min(420px, 90vw);
+    text-align: left;
+  }
+
+  .audio-track-info {
+    margin-bottom: 0.75rem;
+  }
+
+  .audio-track-name {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgb(255, 212, 0);
+  }
+
+  .audio-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .audio-btn {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 1px solid rgb(255, 212, 0);
+    background: transparent;
+    color: rgb(255, 212, 0);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .audio-btn:hover {
+    background: rgba(255, 212, 0, 0.15);
+  }
+
+  .audio-time-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .audio-time {
+    font-size: 0.7rem;
+    color: rgb(255, 212, 0);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .audio-seek,
+  .audio-volume {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 3px;
+    border-radius: 2px;
+    background: rgba(255, 212, 0, 0.25);
+    outline: none;
+    cursor: pointer;
+  }
+
+  .audio-seek {
+    flex: 1;
+  }
+
+  .audio-seek::-webkit-slider-thumb,
+  .audio-volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgb(255, 212, 0);
+    cursor: pointer;
+  }
+
+  .audio-volume-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-shrink: 0;
+  }
+
+  .audio-vol-icon {
+    color: rgb(255, 212, 0);
+  }
+
+  .audio-volume {
+    width: 64px;
+  }
+</style>
+
+<script>
+  const audio = document.getElementById('ucAudio') as HTMLAudioElement;
+  const playPauseBtn = document.getElementById('playPauseBtn')!;
+  const playIcon = document.getElementById('playIcon')!;
+  const pauseIcon = document.getElementById('pauseIcon')!;
+  const seekBar = document.getElementById('seekBar') as HTMLInputElement;
+  const volumeBar = document.getElementById('volumeBar') as HTMLInputElement;
+  const currentTimeEl = document.getElementById('currentTime')!;
+  const durationEl = document.getElementById('duration')!;
+
+  function formatTime(s: number) {
+    const m = Math.floor(s / 60);
+    const sec = Math.floor(s % 60);
+    return `${m}:${sec.toString().padStart(2, '0')}`;
+  }
+
+  audio.volume = 0.8;
+
+  // Attempt autoplay — browsers may block until user interaction
+  audio.play().then(() => {
+    playIcon.style.display = 'none';
+    pauseIcon.style.display = '';
+  }).catch(() => {
+    // Blocked by browser policy; user can press play manually
+  });
+
+  playPauseBtn.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+      playIcon.style.display = 'none';
+      pauseIcon.style.display = '';
+    } else {
+      audio.pause();
+      playIcon.style.display = '';
+      pauseIcon.style.display = 'none';
+    }
+  });
+
+  audio.addEventListener('timeupdate', () => {
+    if (audio.duration) {
+      seekBar.value = String((audio.currentTime / audio.duration) * 100);
+      currentTimeEl.textContent = formatTime(audio.currentTime);
+    }
+  });
+
+  audio.addEventListener('loadedmetadata', () => {
+    durationEl.textContent = formatTime(audio.duration);
+  });
+
+  audio.addEventListener('ended', () => {
+    playIcon.style.display = '';
+    pauseIcon.style.display = 'none';
+    seekBar.value = '0';
+    currentTimeEl.textContent = '0:00';
+  });
+
+  seekBar.addEventListener('input', () => {
+    if (audio.duration) {
+      audio.currentTime = (Number(seekBar.value) / 100) * audio.duration;
+    }
+  });
+
+  volumeBar.addEventListener('input', () => {
+    audio.volume = Number(volumeBar.value) / 100;
+  });
+</script>

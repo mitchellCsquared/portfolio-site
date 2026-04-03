@@ -1,0 +1,144 @@
+/* ============================================================================
+   BUTTONS
+   ============================================================================ */
+
+/* Base button */
+.btn {
+  @apply rounded-full border px-4 py-2 text-sm font-semibold
+         transition-all duration-200 ease-out
+         active:scale-95 relative overflow-hidden;
+}
+
+/* Primary = yellow button */
+.btn-primary {
+  border-color: rgb(255, 212, 0);
+  background-color: rgba(255, 212, 0, 0.2);
+  color: rgb(255, 212, 0);
+  animation: none;
+}
+
+.btn-primary:hover {
+  animation: btnPrimaryFlicker 6s infinite, crtScratch 0.3s steps(8, end) infinite;
+  transform: scale(1.03) translateY(-1px);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 229, 212, 0.03) 0px,
+    rgba(0, 229, 212, 0.03) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 1;
+}
+
+.btn-primary:hover::before,
+.btn-primary:focus-within::before,
+.btn-primary:active::before {
+  animation: scratchLines 0.4s infinite;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 229, 212, 0.05) 0px,
+    rgba(0, 229, 212, 0.05) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+
+.btn-primary:hover::after,
+.btn-primary:focus-within::after,
+.btn-primary:active::after {
+  opacity: 1;
+  animation: warpLines 0.5s 1, unwarpLines 0.3s 0.5s 1 forwards;
+}
+
+/* Secondary = purple button */
+.btn-secondary {
+  border-color: rgb(124, 77, 255);
+  background-color: rgba(124, 77, 255, 0.2);
+  color: rgb(217, 217, 214);
+  animation: none;
+}
+
+.btn-secondary:hover {
+  animation: btnSecondaryFlicker 6s infinite, crtScratch 0.3s steps(8, end) infinite;
+  transform: scale(1.03) translateY(-1px);
+}
+
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 229, 212, 0.03) 0px,
+    rgba(0, 229, 212, 0.03) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 1;
+}
+
+.btn-secondary:hover::before,
+.btn-secondary:focus-within::before,
+.btn-secondary:active::before {
+  animation: scratchLines 0.4s infinite;
+}
+
+.btn-secondary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 229, 212, 0.05) 0px,
+    rgba(0, 229, 212, 0.05) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+
+.btn-secondary:hover::after,
+.btn-secondary:focus-within::after,
+.btn-secondary:active::after {
+  opacity: 1;
+  animation: warpLines 0.5s 1, unwarpLines 0.3s 0.5s 1 forwards;
+}

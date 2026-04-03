@@ -1,0 +1,40 @@
+/* ============================================================================
+   TEXT & TYPOGRAPHY
+   ============================================================================ */
+
+@layer components {
+  .text-highlight {
+    @apply font-medium text-yellow transition-colors duration-200 transition-all hover:text-accent cursor-pointer;
+  }
+
+  .text-highlight:hover {
+    animation: crtScratch 0.3s steps(8, end) infinite;
+  }
+
+  /* Nav links with CRT scratch effect */
+  nav a {
+    cursor: pointer;
+  }
+
+  nav a:hover {
+    animation: crtScratch 0.3s steps(8, end) infinite;
+  }
+
+  /* Highlight with hover effect (optional variant) */
+  .text-link {
+    @apply font-medium text-yellow transition-colors duration-200 transition-all hover:text-accent cursor-pointer;
+  }
+
+  /* Typewriter heading with CRT effect */
+  .typewriter-heading {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid var(--color-accent);
+
+    animation:
+      typing 3s steps(60, end) 0.3s forwards,
+      caret 0.8s step-end infinite 3.3s,
+      typewriterFlicker 0.8s steps(8, end) 0.3s infinite;
+  }
+}
